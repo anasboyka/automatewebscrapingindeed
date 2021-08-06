@@ -54,7 +54,7 @@ def getData(soup):
     return
 
 
-#sitekey = 'eb27f525-f936-43b4-91e2-95a426d4a8bd'
+# sitekey = 'eb27f525-f936-43b4-91e2-95a426d4a8bd'
 tomorrowdate = datetime.datetime.now().date() + timedelta(days=1)
 jobList = []
 runOnce = True
@@ -73,14 +73,15 @@ while 1:
             print(df.head)
             df.to_csv(f'csvfiles/flutterJob{datetime.datetime.now().strftime("%d%m%Y")}.csv')
             runOnce = False
-            
-            #push file on github
+
+            # push file on github
             time.sleep(3)
-            subprocess.run(["lxterminal","-e","git","add",".")
+            subprocess.run(["lxterminal", "-e", "git", "add", "."])
             time.sleep(1)
-            subprocess.run(["lxterminal","-e","git","add",".")
+            subprocess.run(["lxterminal", "-e", "git", "add", "."])
             time.sleep(2)
-            subprocess.run(["lxterminal","-e","git","commit","-m","\"upload new file \"")
+            subprocess.run(
+                ["lxterminal", "-e", "git", "commit", "-m", f"\"upload new file {datetime.datetime.now().date()}\""])
             time.sleep(2)
-            subprocess.run(["lxterminal","-e","git","push")
-#done
+            subprocess.run(["lxterminal", "-e", "git", "push"])
+# done
