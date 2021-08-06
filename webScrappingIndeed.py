@@ -73,5 +73,14 @@ while 1:
             print(df.head)
             df.to_csv(f'csvfiles/flutterJob{datetime.datetime.now().strftime("%d%m%Y")}.csv')
             runOnce = False
-
+            
+            #push file on github
+            time.sleep(3)
+            subprocess.run(["lxterminal","-e","git","add",".")
+            time.sleep(1)
+            subprocess.run(["lxterminal","-e","git","add",".")
+            time.sleep(2)
+            subprocess.run(["lxterminal","-e","git","commit","-m","\"upload new file \"")
+            time.sleep(2)
+            subprocess.run(["lxterminal","-e","git","push")
 #done
