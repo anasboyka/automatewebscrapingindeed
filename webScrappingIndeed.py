@@ -4,6 +4,8 @@ import pandas as pd
 import re
 import datetime
 from datetime import timedelta
+import subprocess
+import time
 
 
 def gethtmlPage(page):
