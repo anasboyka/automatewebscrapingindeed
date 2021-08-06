@@ -69,7 +69,7 @@ while 1:
                 getData(s)
             df = pd.DataFrame(jobList)
             print(df.head)
-            df.to_csv(f'flutterJob{datetime.datetime.now().strftime("%d%m%Y")}.csv')
+            df.to_csv(f'csvfiles/flutterJob{datetime.datetime.now().strftime("%d%m%Y")}.csv')
             runOnce = False
 
 
