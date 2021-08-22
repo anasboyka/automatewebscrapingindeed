@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "D:\pythonfile\innovation\webScrappingIndeed\autostart.bat" , 0 , True

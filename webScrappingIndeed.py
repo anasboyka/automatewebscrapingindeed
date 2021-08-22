@@ -4,6 +4,8 @@ import pandas as pd
 import re
 import datetime
 from datetime import timedelta
+from win10toast import ToastNotifier
+import os
 import subprocess
 import time
 
@@ -52,6 +54,11 @@ def getData(soup):
 
         # print(job)
     return
+
+toast = ToastNotifier()
+toast.show_toast("autostart","the python script for web scrapping has been started",duration=30)
+os.chdir("D:\pythonfile\innovation\webScrappingIndeed")
+
 
 
 # sitekey = 'eb27f525-f936-43b4-91e2-95a426d4a8bd'
