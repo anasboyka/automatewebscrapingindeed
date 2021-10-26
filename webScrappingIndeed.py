@@ -48,6 +48,7 @@ def getData(soup):
         job = {
             'title': title,
             'company': company,
+            'location':location,
             'salary': salary,
             'description': description
         }
