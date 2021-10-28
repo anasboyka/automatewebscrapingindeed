@@ -41,20 +41,10 @@ def getData(soup):
         #print(item.find_all('div', class_='salary-snippet'))
         if item.find_all('div', class_='salary-snippet') is not None:
             d = item.find_all('div', class_='salary-snippet')
+            salary = ''
             for x in d:
-                print(x.text)
-
-
-
-        # if item.find_all('div', class_='salary-snippet') is not None:
-        #     d = item.find_all('div', class_='salary-snippet')
-        #     for item in d:
-        #         x = item.find('span')
-        #         if x:
-        #             print(x.text.strip())
-        #             salary = x.text.strip()
-        if item.find('span', class_='salary-snippet') is not None:
-            salary = item.find('span', class_='salary-snippet').text.strip()
+                #print(x.text)
+                salary = x.text
         else:
             salary = ''
         description = item.find('ul').text.strip()
