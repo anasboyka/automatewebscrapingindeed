@@ -38,12 +38,10 @@ def getData(soup):
             title = spans[1].text.strip()
         company = item.find('span', class_='companyName').text.strip()
         location = item.find('div', class_='companyLocation').text.strip()
-        #print(item.find_all('div', class_='salary-snippet'))
         if item.find_all('div', class_='salary-snippet') is not None:
             d = item.find_all('div', class_='salary-snippet')
             salary = ''
             for x in d:
-                #print(x.text)
                 salary = x.text
         else:
             salary = ''
@@ -57,8 +55,6 @@ def getData(soup):
             'description': description
         }
         jobList.append(job)
-
-        # print(job)
     return
 
 
