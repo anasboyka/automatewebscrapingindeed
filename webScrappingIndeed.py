@@ -28,7 +28,6 @@ def getPageCount(s):
     pageCount = totalJobs // 15
     return pageCount * 10
 
-
 def getData(soup):
     divs = soup.find_all('div', class_='job_seen_beacon')
     # print(len(divs))
@@ -39,6 +38,21 @@ def getData(soup):
             title = spans[1].text.strip()
         company = item.find('span', class_='companyName').text.strip()
         location = item.find('div', class_='companyLocation').text.strip()
+        #print(item.find_all('div', class_='salary-snippet'))
+        if item.find_all('div', class_='salary-snippet') is not None:
+            d = item.find_all('div', class_='salary-snippet')
+            for x in d:
+                print(x.text)
+
+
+
+        # if item.find_all('div', class_='salary-snippet') is not None:
+        #     d = item.find_all('div', class_='salary-snippet')
+        #     for item in d:
+        #         x = item.find('span')
+        #         if x:
+        #             print(x.text.strip())
+        #             salary = x.text.strip()
         if item.find('span', class_='salary-snippet') is not None:
             salary = item.find('span', class_='salary-snippet').text.strip()
         else:
